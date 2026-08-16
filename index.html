@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="app">
+        <!-- ==================================================== -->
+        <!-- ===== СТРАНИЦА ВХОДА / РЕГИСТРАЦИИ ===== -->
+        <!-- ==================================================== -->
+        <div id="authPage">
+            <div id="authContainer">
+                <!-- Вход -->
+                <div id="loginForm">
+                    <h2>Вход</h2>
+                    <input type="email" id="loginEmail" placeholder="Почта" />
+                    <input type="password" id="loginPassword" placeholder="Пароль" />
+                    <button onclick="handleLogin()">Войти</button>
+                    <p class="authSwitch">Нет аккаунта? <span onclick="showRegister()">Зарегистрироваться</span></p>
+                </div>
+
+                <!-- Регистрация -->
+                <div id="registerForm" style="display:none;">
+                    <h2>Регистрация</h2>
+                    <input type="text" id="regUsername" placeholder="Логин" />
+                    <input type="email" id="regEmail" placeholder="Почта" />
+                    <input type="password" id="regPassword" placeholder="Пароль" />
+                    <button onclick="handleRegister()">Зарегистрироваться</button>
+                    <p class="authSwitch">Уже есть аккаунт? <span onclick="showLogin()">Войти</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================== -->
+        <!-- ===== ОСНОВНОЕ ПРИЛОЖЕНИЕ (после авторизации) ===== -->
+        <!-- ==================================================== -->
+        <div id="mainApp" style="display:none; flex-direction:column; height:100%;">
+
+            <!-- Шапка -->
+            <header>
+                <button id="btnChat" class="active" onclick="switchTab('chat')">Чат</button>
+                <button id="btnProjects" onclick="switchTab('projects')">Проекты</button>
+                <button id="btnProfile" onclick="switchTab('profile')">Профиль</button>
+                <button id="btnLogout" onclick="handleLogout()" style="margin-left:auto; color:#888;">Выйти</button>
+            </header>
+
+            <!-- ЧАТ -->
+            <section id="tabChat" class="tab active">
+                <div id="chatLayout">
+                    <aside id="chatSidebar">
+                        <div id="chatListHeader">
+                            <span>Чаты</span>
+                            <button onclick="createNewChat()">+</button>
+                        </div>
+                        <div id="chatList"></div>
+                    </aside>
+                    <div id="chatMain">
+                        <div id="chatMessages">
+                            <div class="message bot">
+                                <span class="avatar">🤖</span>
+                                <p>Загрузите код или задайте вопрос.</p>
+                            </div>
+                        </div>
+                        <div id="chatInputArea">
+                            <label for="fileInput" id="fileLabel">📎</label>
+                            <input type="file" id="fileInput" multiple />
+                            <input type="text" id="messageInput" placeholder="Сообщение..." />
+                            <button id="sendBtn">➤</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ПРОЕКТЫ -->
+            <section id="tabProjects" class="tab">
+                <div id="projectLayout">
+                    <aside id="projectSidebar">
+                        <div id="projectListHeader">
+                            <span>Проекты</span>
+                            <button onclick="createNewProject()">+</button>
+                        </div>
+                        <div id="projectList"></div>
+                    </aside>
+                    <div id="projectMain">
+                        <div id="projectFilesHeader">
+                            <span id="currentProjectName">Выберите проект</span>
+                            <label for="projectFileInput" id="addFileLabel">+ Добавить файл</label>
+                            <input type="file" id="projectFileInput" multiple />
+                        </div>
+                        <div id="projectFilesList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ПРОФИЛЬ -->
+            <section id="tabProfile" class="tab">
+                <div id="profileInfo">
+                    <div class="profile-row"><span>Логин</span><span id="profileUsername">—</span></div>
+                    <div class="profile-row"><span>Почта</span><span id="profileEmail">—</span></div>
+                    <div class="profile-row"><span>Активен</span><span id="profileActiveSince">—</span></div>
+                </div>
+            </section>
+
+        </div><!-- end mainApp -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
