@@ -1,0 +1,19 @@
+# Виртуальное окружение Python
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE
+.idea/
+.vscode/
+
+# Переменные окружения
+.env
+.env.*
+
+# Загруженные проекты
+projects/*
+!projects/.gitkeep
