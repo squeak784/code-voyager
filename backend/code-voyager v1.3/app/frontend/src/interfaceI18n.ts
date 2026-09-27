@@ -1,0 +1,23 @@
+export const interfaceEnglish: Record<string,string> = {
+  'Язык ответов': 'Response language',
+  'Как в интерфейсе': 'Match interface language',
+  'Подробность ответов': 'Response detail',
+  'Кратко': 'Brief',
+  'Обычно': 'Standard',
+  'Подробно': 'Detailed',
+  'Настройки применяются к новым ответам. Язык можно также указать в вопросе.': 'Settings apply to new responses. You can also request a language in your question.',
+  'Сбросить настройки помощника': 'Reset assistant settings',
+  'Оттенок': 'Hue',
+  'Насыщенность': 'Saturation',
+  'Яркость': 'Brightness',
+  'Цвет применяется сразу.': 'Color changes apply immediately.',
+
+  'Настройки помощника':'Assistant settings', 'Имя помощника':'Assistant name', 'Чат':'Chat',
+  'Имя отображается в чате. Оставьте поле пустым, чтобы использовать стандартное имя.':'The name appears in chat. Leave it empty to use the default name.',
+  'Сбросить имя':'Reset name', 'Размер панелей':'Panel sizes', 'Сбросить размеры панелей':'Reset panel sizes',
+  'Перетаскивайте границы между файлами, кодом и помощником. Двойной щелчок по границе возвращает стандартную ширину.':'Drag the dividers between files, code and the assistant. Double-click a divider to restore its default width.',
+  'Выбрать произвольный цвет':'Choose a custom color', 'Свой цвет':'Custom color', 'Цвет HEX':'HEX color', 'Канал цвета':'Color channel',
+  'Нажмите на кружок или задайте RGB от 0 до 255. Цвет применяется сразу.':'Click the circle or enter RGB values from 0 to 255. Changes apply immediately.',
+  'Ширина панели файлов':'File panel width', 'Ширина панели помощника':'Assistant panel width',
+  'Перетащите границу. Двойной щелчок — сброс.':'Drag to resize. Double-click to reset.',
+};
